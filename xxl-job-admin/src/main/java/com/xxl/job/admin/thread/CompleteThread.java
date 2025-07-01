@@ -49,7 +49,7 @@ public class CompleteThread extends AbstractThreadListener implements Ordered {
                 30L,
                 TimeUnit.SECONDS,
                 new LinkedBlockingQueue<>(3000),
-                r -> new Thread(r, "xxl-job, admin LosedMonitor-callbackThreadPool-" + r.hashCode()),
+                r -> new Thread(r, "xxl-job, admin CompleteThread-callbackThreadPool-" + r.hashCode()),
                 (r, executor) -> {
                     r.run();
                     log.warn(">>>>>>>>>>> xxl-job, callback too fast, match threadpool rejected handler(run now).");
@@ -68,7 +68,7 @@ public class CompleteThread extends AbstractThreadListener implements Ordered {
                 }
             }
 
-            log.info(">>>>>>>>>>> xxl-job, LosedMonitor start...");
+            log.info(">>>>>>>>>>> xxl-job, CompleteThread start...");
 
             // monitor
             while (!toStop) {

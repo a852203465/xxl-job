@@ -15,7 +15,6 @@ import com.xxl.job.core.thread.AbstractThreadListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2023/05/15
  */
 @Slf4j
-@Component
+//@Component
 public class FailMonitorThread extends AbstractThreadListener implements Ordered {
 
     @Autowired
